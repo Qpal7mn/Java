@@ -1,0 +1,33 @@
+import zen.core.Zen;
+
+public class Ninjump {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Zen.create(800,600);
+		Ninja ned = new Ninja();
+		Platform P1 = new Platform(400, 300);
+		Gold g = new Gold(P1);
+		
+		while(true) {
+			//Draw the background
+			Zen.setBackground("light blue");
+			Zen.setColor("green");
+			Zen.fillRect(0, 500, 800, 100);
+			
+			//draw Ninja and move Ninja
+			ned.draw();
+			ned.move();
+			ned.checkPlatform(P1);
+			
+			g.draw();
+			
+			P1.draw();
+			P1.move();
+			
+			Zen.buffer(30);		}
+		
+	}
+
+}
