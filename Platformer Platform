@@ -1,0 +1,29 @@
+import zen.core.Zen;
+
+
+public class Platform {
+	int x;
+	int y;
+	int dx;
+	
+	public Platform(int gotox, int gotoy) {
+		x = gotox;
+		y = gotoy;
+	}
+	
+	public void draw() {
+		Zen.setColor("purple");
+		Zen.fillRect(x - 75, x - 5, 150, 10);
+	}
+	public void move() {
+	if (x < 75){
+		dx = 4;
+	}
+	if (x > 550) {
+		dx = -4;
+	}
+	
+	x = x  + dx;
+	}
+}
+
