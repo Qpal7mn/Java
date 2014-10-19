@@ -1,0 +1,14 @@
+import zen.core.Zen;
+public class Gold {
+	int x;
+	int y;
+	public void Gold(Platform p){
+		x= p.x;
+		y= p.y - 40;
+	}
+	
+	public void draw(){
+	Zen.setColor("blue");
+	Zen.fillRect(-10, 10, 20, 20);
+	}
+}
