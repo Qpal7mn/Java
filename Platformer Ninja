@@ -1,0 +1,63 @@
+import zen.core.Zen;
+
+public class Ninja {
+
+	int x;
+	int y;
+	int dy;
+	boolean jumpnig = false;
+	
+	Platform ground = null;
+	
+	public Ninja(){
+		x = 400;
+		y = 475;
+	}
+	public void draw(){
+		Zen.setColor("black");
+		Zen.fillOval(x - 15, y - 15, 30, 30);
+	}
+	
+	
+	public void checkPlatform(Platform p){
+		if(p.y + dy > y && Math.abs(p.x - x) < 30){
+			ground = p;
+		}
+	}
+	
+	
+	public void move(){
+		if(Zen.isKeyPressed("right")){
+			x= x + 6;
+		}
+		if(Zen.isKeyPressed("left")){
+			x = x - 6;
+		}
+		if(Zen.isKeyPressed("up") && jumpnig == false){
+			dy = -15;
+			y = y - 1;
+			jumpnig = true;
+		}	
+		if(ground == null){
+		if( y < 485){
+			y = y + dy;
+			dy = dy + 1;
+		}
+		else{
+			y = 485;
+			jumpnig = false;
+		}
+		}
+		else{
+			if(y < ground.y ){
+				y = y + dy;
+				dy = dy + 1;
+			}
+			else{
+				y = ground.y;
+				jumpnig = false;
+			}
+		}
+		ground = null;
+	}
+}
