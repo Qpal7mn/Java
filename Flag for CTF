@@ -1,0 +1,25 @@
+package CTF;
+
+import zen.core.Zen;
+
+public class Flag{
+	
+	int x;
+	int y;
+	String team;
+	String owner;
+	
+	public Flag(String color){
+		team = color;
+		owner = Zen.read(team + "owner");
+	}
+	public void draw(){
+		Zen.setColor(team);
+		Zen.fillRect(x-20,x-20,40,40);
+	}
+	public void move(){
+		x = Zen.readInt(team + "x");
+		y = Zen.readInt(team + "y");
+	}
+	
+}
