@@ -1,0 +1,22 @@
+package CTF;
+
+import java.util.ArrayList;
+
+public class Game {
+	ArrayList <Team> teams;
+	public Game(){
+		teams = new ArrayList <Team> ();
+	}
+	public void addTeam(Team t){
+		teams.add(t);
+	}
+	public void draw(){
+
+	}
+	public void move(){
+
+	}
+
+
+
+}
